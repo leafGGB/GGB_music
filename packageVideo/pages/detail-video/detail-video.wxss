@@ -1,0 +1,72 @@
+/* pages/detail-video/detail-video.wxss */
+page {
+  height: 100vh;
+}
+
+.video {
+  width: 100%;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+}
+
+.content {
+  /* margin-top: 225px; */
+
+  /* height: 300px; */
+  height: calc(100% - 225px);
+}
+
+.content .info {
+  margin: 10px 15px 20px;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.content .info .top .name {
+  font-size: 55rpx;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+
+.content .info .button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+
+.content .info .button .time, .content .info .button .count {
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.xian {
+  width: 100%;
+  height: 1px;
+  background-color: #aaa;
+  opacity: 0.2;
+  margin-bottom: 20rpx;
+}
+
+.related-video .text {
+  padding: 0 15rpx 20rpx;
+  font-size: 45rpx;
+  font-weight: 600;
+}
+
+.related-video .item {
+  padding: 0 15rpx 20rpx;
+  display: flex;
+}
+
+.related-video .item .image {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 12rpx;
+  margin-right: 10rpx;
+}
+
+.related-video .item .title {
+  flex: 1;
+  font-size: 30rpx;
+}

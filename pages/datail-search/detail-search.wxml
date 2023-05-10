@@ -1,0 +1,46 @@
+<!--pages/datail-search/detail-search.wxml-->
+<view class="headerTap">
+  <van-search
+    placeholder="请输入搜索关键词"
+    shape="round"
+    use-action-slot
+    bind:search="onSearch"
+    bind:change="onChangeClick"
+  >
+    <view class="sousuo" slot="action" bind:tap="onClick">搜索</view>
+  </van-search>
+</view>
+
+<view class="history">
+ <view class="headerText">
+  <view class="his">搜索历史：</view>
+  <van-icon bind:click="ondetailClick" class="icon" name="delete-o" />
+ </view>
+ <view class="hisContent">
+ <block wx:for="{{hisWords}}">
+  <view class="hisItem">{{item}}</view>
+ </block>
+ </view>
+</view>
+
+<view class="hot">
+  <view class="title">热搜榜</view>
+  <view class="hotContent">
+    <block wx:for="{{hotLists}}" wx:key="score">
+      <view class="hotItems" bindtap="onHotItemClick" data-hotItem="{{item.searchWord}}">
+        <text class="listIndex">{{index<9?'0'+(index+1):index+1}}</text>
+        <view class="hotItem">{{item.searchWord}}</view>
+        <image class="image" wx:if="{{item.iconType === 1}}" src="{{item.iconUrl}}" mode="widthFix"/>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="maskList" wx:if="{{keywords !== ''}}">
+  <block wx:for="{{options}}" wx:key="id">
+    <view class="mask">
+      <van-icon class="icon" style="font-size: 30rpx;" name="search" />
+      <text class="song">{{item.name}}</text>
+    </view>
+  </block>
+</view>

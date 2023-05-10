@@ -1,0 +1,33 @@
+<!--pages/detail-video/detail-video.wxml-->
+<!-- 1. video组件播放视频 -->
+<video 
+  class="video" 
+  src="{{mvUrl}}" 
+  danmu-list="{{danmuList}}"
+  referrer-policy="origin"
+/>
+<!-- autoplay -->
+
+<scroll-view class="content" scroll-y>
+  <view class="info">
+    <view class="top">
+      <view class="name">{{ mvInfo.name}}</view>
+    </view>
+    <view class="artName">{{ mvInfo.artistName}}</view>
+    <view class="button">
+      <view class="count">播放次数: {{ mvInfo.playCount }}</view>
+      <view class="time">{{ mvInfo.publishTime}}</view>
+    </view>
+  </view>
+  <view class="xian"></view>
+
+  <view class="related-video">
+   <view class="text">视频推荐</view>
+    <block wx:for="{{relatedVideo}}" wx:key="vid">
+      <view class="item">
+        <image class="image" src="{{item.coverUrl}}" mode="widthFix"/>
+        <view class="title">{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+</scroll-view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "MV",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "video-item": "/components/video-item/video-item"
+  }
+}
